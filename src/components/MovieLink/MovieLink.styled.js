@@ -20,11 +20,18 @@ div{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     color: rgb(203, 224, 230);
     transition: background-image 0.25s ease, color 0.25s ease;
+    overflow: hidden;
 }
 
 img{
     margin-bottom: 12px;
     border: 1px solid rgba(185, 185, 185, 0.8);
+    height: 284px;
+}
+
+h2{
+max-height: 88px;
+overflow: hidden;
 }
 
 p, h2 {

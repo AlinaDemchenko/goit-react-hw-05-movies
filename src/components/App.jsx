@@ -1,11 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Home from 'pages/Home/Home';
 import Movies from 'pages/Movies/Movies';
 import SharedLayout from './SharedLayout/SharedLayout';
 import Reviews from './Reviews/Reviews';
 import Cast from './Cast/Cast';
 import MovieDetails from 'pages/ MovieDetails/ MovieDetails';
-import Error from 'pages/Error/Error';
 
 export const App = () => {
   return (
@@ -17,7 +16,7 @@ export const App = () => {
           <Route path="reviews" element={<Reviews />} />
           <Route path="cast" element={<Cast />} />
         </Route>
-        <Route path="*" element={<Error/>}/>
+        <Route path="*" element={<Navigate to="/" replace/>}/>
       </Route>
     </Routes>
   );

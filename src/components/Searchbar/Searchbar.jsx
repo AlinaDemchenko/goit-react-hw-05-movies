@@ -1,24 +1,19 @@
-function Searchbar({handlerSubmit}) {
+import { useSearchParams } from "react-router-dom";
+import { StyledSearchbar } from './Searchbar.styled';
 
-    const onSubmit = evt => {
-        evt.preventDefault();
-        handlerSubmit(evt.target.elements.search.value);
-      };
+function Searchbar({ handlerSubmit, valueByDefault }) {
+  const onSubmit = evt => {
+    evt.preventDefault();
+    handlerSubmit(evt.target.elements.search.value);
+  };
 
   return (
-    <div>
+    <StyledSearchbar>
       <form onSubmit={onSubmit}>
-        <input
-          name="search"
-          type="text"
-          autoComplete="off"
-          autoFocus
-        />
-             <button type="submit">
-          <span>Search</span>
-        </button>
+        <input name="search" type="text" autoComplete="off" defaultValue={valueByDefault} required/>
+        <button type="submit"></button>
       </form>
-    </div>
+    </StyledSearchbar>
   );
 }
 

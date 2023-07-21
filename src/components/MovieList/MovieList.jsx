@@ -6,7 +6,8 @@ function MovieList({ listData }) {
   return (
     <StyledMovieList>
       {listData.map(
-        ({ id, title, poster_path, release_date, vote_average}) => (
+        ({ id, title, poster_path, release_date, vote_average}) => {
+          return (
           <MovieLink
             key={id}
             title={title}
@@ -15,7 +16,7 @@ function MovieList({ listData }) {
             rating={vote_average}
             id={id}
           />
-        )
+        )}
       )}
     </StyledMovieList>
   );
