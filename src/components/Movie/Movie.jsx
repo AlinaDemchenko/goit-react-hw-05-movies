@@ -1,12 +1,12 @@
-import React from 'react';
 import { StyledMovie } from './Movie.styled';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import { useRef } from 'react';
 import { Rating } from 'components/Rating/Rating';
 import backdrop from '../../images/backdropPhoto.png';
 
 function Movie({ movieInfo }) {
-  // const navigate = useNavigate();
   const location = useLocation();
+  const backLink = useRef(location.state?.from);
 
   const image = `https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`;
 
@@ -52,8 +52,7 @@ function Movie({ movieInfo }) {
         {movieInfo.vote_average > 0 && (
           <Rating rating={movieInfo.vote_average} />
         )}
-        <Link to={location.state} className="backLink">
-          {' '}
+        <Link to={backLink.current ?? '/'} className="backLink">
           <span>◀︎◀︎</span>GO BACK
         </Link>
       </div>

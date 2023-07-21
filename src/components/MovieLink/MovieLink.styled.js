@@ -32,6 +32,7 @@ img{
 h2{
 max-height: 88px;
 overflow: hidden;
+margin-bottom: 6px;
 }
 
 p, h2 {

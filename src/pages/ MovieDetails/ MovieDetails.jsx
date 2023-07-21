@@ -1,16 +1,15 @@
-import Movie from 'components/Movie/Movie';
-import { Link, Outlet } from 'react-router-dom';
 import { requestMovieDetails } from 'services/api';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Movie from 'components/Movie/Movie';
 import Loader from 'components/Loader/Loader';
+import AdditionalButton from 'components/AdditionButton/AdditionButton';
 
 const MovieDetails = () => {
-
   const [loading, setLoading] = useState(false);
   const [movie, setMovie] = useState({});
-  const {movieId} = useParams();
-  
+  const { movieId } = useParams();
+
   useEffect(() => {
     async function getMovieDetails() {
       try {
@@ -26,20 +25,10 @@ const MovieDetails = () => {
     getMovieDetails();
   }, [movieId]);
 
-return (
+  return (
     <main>
-      <Movie movieInfo={movie}/>
-      <div>
-        <ul>
-          <li>
-            <Link to="reviews">Reviews</Link>
-          </li>
-          <li>
-            <Link to="cast">Cast</Link>
-          </li>
-        </ul>
-        <Outlet />
-      </div>
+      <Movie  movieInfo={movie} />
+      <AdditionalButton/>
       {loading && <Loader />}
     </main>
   );

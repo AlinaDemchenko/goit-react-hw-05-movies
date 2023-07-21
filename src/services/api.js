@@ -27,6 +27,10 @@ export const requestMovieDetails = async id => {
   return data;
 };
 
+export const requestReview = async id => {
+  const { data } = await instance.get(`movie/${id}/reviews`);
+  return data;
+};
+
 //   a3849424f9dfb073f2e7abf0355069b1
 // 298618
-// https://api.themoviedb.org/3/movie/{movie_id}

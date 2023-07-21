@@ -8,7 +8,7 @@ function MovieLink({ id, title, image, date, rating }) {
   const location = useLocation();
   return (
     <StyledMovieLink>
-      <Link to={location.pathname === "/movies" ? `${id}` : `movies/${id}`} state={location}>
+      <Link to={location.pathname === "/movies" ? `${id}` : `movies/${id}`} state={{ from: location }}>
         <div>
           <img
             src={image ? primaryImage : backdrop}
