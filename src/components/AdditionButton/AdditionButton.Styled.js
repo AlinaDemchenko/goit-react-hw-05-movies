@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledAdditionalButton = styled.button`
+  display: block;
+  margin: 0 auto;
   width: 1000px;
   border: 1px solid #fff;
   height: 60px;
@@ -24,8 +26,7 @@ export const StyledAdditionalButton = styled.button`
   }
   &:hover,
   &:focus {
-  background-color: rgba(252, 255, 255, 0.3);
-  color: #fff;
+    background-color: rgba(252, 255, 255, 0.3);
+    color: #fff;
   }
-
 `;

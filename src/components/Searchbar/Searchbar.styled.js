@@ -49,7 +49,7 @@ export const StyledSearchbar = styled.div`
       rgba(0, 0, 0, 0.06) 0px 0.2px 1px, rgba(0, 0, 0, 0.09) 0px 0.4px 0.2px,
       rgba(0, 0, 0, 0.09) 0px 0.8px 0.4px, rgba(0, 0, 0, 0.09) 0px 1.6px 0.8px,
       rgba(0, 0, 0, 0.09) 0px 3.2px 1.6px;
-      transition: color 250ms linear;
+    transition: color 250ms linear;
   }
 
   button:hover {

@@ -32,5 +32,7 @@ export const requestReview = async id => {
   return data;
 };
 
-//   a3849424f9dfb073f2e7abf0355069b1
-// 298618
+export const requestCast = async id => {
+  const { data } = await instance.get(`movie/${id}/credits`);
+  return data;
+};

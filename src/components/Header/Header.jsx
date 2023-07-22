@@ -3,10 +3,10 @@ import Navbar from 'components/Navbar/Navbar';
 
 function Header() {
   return (
-   <StyledHeader>
-<Navbar/>
-   </StyledHeader>
-  )
+    <StyledHeader>
+      <Navbar />
+    </StyledHeader>
+  );
 }
 
-export default Header
+export default Header;

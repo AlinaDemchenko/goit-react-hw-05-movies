@@ -1,13 +1,16 @@
-import { StyledReviews, StyledReview } from './Reviews.styled';
+import { StyledReviews } from './Reviews.styled';
 import { requestReview } from 'services/api';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import Notification from 'components/Notification/Notification';
 import Loader from 'components/Loader/Loader';
 
 const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState();
   const [loading, setLoading] = useState(false);
+  const defaultReview = "We don't have any reviews for this movie.";
 
   useEffect(() => {
     async function getReviews() {
@@ -15,9 +18,8 @@ const Reviews = () => {
         setLoading(true);
         const data = await requestReview(movieId);
         setReviews(data.results);
-        console.log(data.results);
       } catch (error) {
-        console.log(error.message);
+        toast.error(error.message);
       } finally {
         setLoading(false);
       }
@@ -27,22 +29,23 @@ const Reviews = () => {
 
   return (
     <StyledReviews>
-      {reviews && (
+      {reviews?.length > 0 ? (
         <ul>
           {reviews.map(review => (
-            <StyledReview className='review' key={review.id}>
+            <li className="review" key={review.id}>
               <h3>{review.author}</h3>
-              <span>{review.created_at}</span>
+              <span>{review.created_at?.slice(0, 10)}</span>
               <p>{review.content}</p>
-            </StyledReview>
+            </li>
           ))}
         </ul>
+      ) : (
+        <p>{defaultReview}</p>
       )}
       {loading && <Loader />}
+      <Notification />
     </StyledReviews>
   );
 };
 
 export default Reviews;
-
-// "We don't have any reviews for this movie"

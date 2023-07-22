@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { Rating } from 'components/Rating/Rating';
 import backdrop from '../../images/backdropPhoto.png';
+import PropTypes from 'prop-types';
 
 function Movie({ movieInfo }) {
   const location = useLocation();
@@ -35,13 +36,14 @@ function Movie({ movieInfo }) {
   }
 
   const titleStyle = getTitleStyle();
-  // const handleClick = () => {
-  //   navigate(location.state);
-  // };
+
   return (
     <StyledMovie>
-      <img src={movieInfo.poster_path ? image : backdrop} alt={movieInfo.title} />
-      <div>
+      <img
+        src={movieInfo.poster_path ? image : backdrop}
+        alt={movieInfo.title}
+      />
+      <div className="movie">
         <h2 className={titleStyle}>{movieInfo.title}</h2>
         <h3>Overview</h3>
         <p>{description}</p>
@@ -59,5 +61,19 @@ function Movie({ movieInfo }) {
     </StyledMovie>
   );
 }
+
+Movie.propTypes = {
+  movieInfo: PropTypes.shape({
+    poster_path: PropTypes.string,
+    genres: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+      })
+    ),
+    overview: PropTypes.string,
+    title: PropTypes.string,
+    vote_average: PropTypes.number,
+  }),
+};
 
 export default Movie;

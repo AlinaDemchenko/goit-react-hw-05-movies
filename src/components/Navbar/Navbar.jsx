@@ -1,4 +1,4 @@
-import { StyledNavbar, Link } from './Navbar.styled'
+import { StyledNavbar, Link } from './Navbar.styled';
 
 function Navbar() {
   return (
@@ -6,7 +6,7 @@ function Navbar() {
       <Link to="/">Home</Link>
       <Link to="/movies">Movies</Link>
     </StyledNavbar>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

@@ -1,5 +1,5 @@
-import { useSearchParams } from "react-router-dom";
 import { StyledSearchbar } from './Searchbar.styled';
+import PropTypes from 'prop-types';
 
 function Searchbar({ handlerSubmit, valueByDefault }) {
   const onSubmit = evt => {
@@ -10,11 +10,22 @@ function Searchbar({ handlerSubmit, valueByDefault }) {
   return (
     <StyledSearchbar>
       <form onSubmit={onSubmit}>
-        <input name="search" type="text" autoComplete="off" defaultValue={valueByDefault} required/>
+        <input
+          name="search"
+          type="text"
+          autoComplete="off"
+          defaultValue={valueByDefault}
+          required
+        />
         <button type="submit"></button>
       </form>
     </StyledSearchbar>
   );
 }
+
+Searchbar.propTypes = {
+  handlerSubmit: PropTypes.func.isRequired,
+  valueByDefault: PropTypes.string,
+};
 
 export default Searchbar;

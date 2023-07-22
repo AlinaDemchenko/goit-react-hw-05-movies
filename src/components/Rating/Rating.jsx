@@ -1,13 +1,17 @@
-// import { Component } from 'react';
 import StarRatings from 'react-star-ratings';
+import PropTypes from 'prop-types';
 
-export const Rating = ({rating}) => {
-      return (
-        <StarRatings
-          rating={rating / 2}
-          starDimension="40px"
-          starSpacing="15px"
-          starRatedColor="#d2dc1d"
-        />
-      );
-    }
+export const Rating = ({ rating }) => {
+  return (
+    <StarRatings
+      rating={rating / 2}
+      starDimension="40px"
+      starSpacing="15px"
+      starRatedColor="#d2dc1d"
+    />
+  );
+};
+
+Rating.propTypes ={
+  rating: PropTypes.number,
+}

@@ -1,21 +1,21 @@
 import styled from 'styled-components';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 export const StyledNavbar = styled.nav`
-display: flex;
-gap: 12px;
-font-size: 26px;
+  display: flex;
+  gap: 12px;
+  font-size: 26px;
 `;
 
 export const Link = styled(NavLink)`
-width: 90px;
-font-weight: bold;
-color: rgba(203, 224, 230, 0.8);
-text-decoration: none;
+  width: 90px;
+  font-weight: bold;
+  color: rgba(203, 224, 230, 0.8);
+  text-decoration: none;
 
-&.active {
+  &.active {
     color: #fff;
-}
+  }
 `;
 /* &.active::after {
     content: "";
@@ -27,6 +27,6 @@ text-decoration: none;
     background: #cbe0e6;
     transform: translateY(5px);} */
 
-    /* transition: color 250ms ease-in;  */
+/* transition: color 250ms ease-in;  */
 
-    // &:hover {   color: rgba(31, 110, 12, 0.8);    }
+// &:hover {   color: rgba(31, 110, 12, 0.8);    }

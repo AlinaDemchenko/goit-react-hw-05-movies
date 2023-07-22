@@ -6,17 +6,17 @@ import AdditionalInfo from 'components/AdditionalInfo/AdditionalInfo';
 const AdditionalButton = () => {
   const [hidden, setHidden] = useState(true);
   const navigate = useNavigate();
-  
-useEffect(() => {
-    if(window.location.pathname.includes("reviews")) {
-        setHidden(false);
-        return;
+
+  useEffect(() => {
+    if (window.location.pathname.includes('reviews')) {
+      setHidden(false);
+      return;
     }
-}, [])
+  }, []);
 
   const handlerClick = () => {
-    if(window.location.pathname.includes("reviews")) {
-        return;
+    if (window.location.pathname.includes('reviews')) {
+      return;
     }
     navigate('reviews');
     setHidden(false);
@@ -24,10 +24,14 @@ useEffect(() => {
 
   return (
     <>
-    <StyledAdditionalButton onClick={handlerClick} type="button" className={hidden === false ? "hidden" : ""}>
-      Additional Information
-    </StyledAdditionalButton>
-    {hidden === false && <AdditionalInfo />}
+      <StyledAdditionalButton
+        onClick={handlerClick}
+        type="button"
+        className={hidden === false ? 'hidden' : ''}
+      >
+        Additional Information
+      </StyledAdditionalButton>
+      {hidden === false && <AdditionalInfo />}
     </>
   );
 };

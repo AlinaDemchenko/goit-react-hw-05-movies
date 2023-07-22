@@ -4,7 +4,7 @@ export const StyledMovie = styled.div`
   width: 920px;
   display: flex;
   height: 600px;
-  margin-bottom: 60px;
+  margin: 0 auto 60px;
   padding: 20px 60px 20px 20px;
   border: 1px solid #fff;
   background-image: linear-gradient(
@@ -14,43 +14,48 @@ export const StyledMovie = styled.div`
   );
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  color: #d9e4e7;
 
   img {
     margin-right: 60px;
   }
 
-  div {
+  div.movie {
     padding: 60px 0;
     position: relative;
+    min-width: 160px;
   }
 
   h2 {
     margin-bottom: 20px;
+    color: #fff;
   }
 
-  h2.large{
+  h2.large {
     font-size: 25px;
   }
 
-  h2.medium{
+  h2.medium {
     font-size: 40px;
-  }  
+  }
 
-  h2.small{
+  h2.small {
     font-size: 60px;
-  }  
+  }
 
-  h3, b {
+  h3,
+  b {
     margin-bottom: 15px;
   }
 
-  b{
+  b {
     display: inline-block;
-    margin-right:10px;
+    margin-right: 10px;
   }
 
   p {
     margin-bottom: 20px;
+    line-height: 1.2em;
   }
 
   span {
@@ -59,16 +64,16 @@ export const StyledMovie = styled.div`
   }
 
   div.star-ratings {
-    transform: translateY(-20px);
+    margin-bottom: 35px;
     padding: 10px 0px !important;
   }
 
-  div.star-container{
+  div.star-container {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
   }
 
-  .backLink{
+  .backLink {
     position: absolute;
     display: block;
     left: 0;
@@ -77,8 +82,8 @@ export const StyledMovie = styled.div`
     font-weight: bolder;
   }
 
-  .backLink:hover, .backLink:focus {
+  .backLink:hover,
+  .backLink:focus {
     text-decoration: underline;
   }
-
 `;
