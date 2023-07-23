@@ -1,7 +1,7 @@
 import StarRatings from 'react-star-ratings';
 import PropTypes from 'prop-types';
 
-export const Rating = ({ rating }) => {
+const Rating = ({ rating }) => {
   return (
     <StarRatings
       rating={rating / 2}
@@ -15,3 +15,5 @@ export const Rating = ({ rating }) => {
 Rating.propTypes ={
   rating: PropTypes.number,
 }
+
+export default Rating;

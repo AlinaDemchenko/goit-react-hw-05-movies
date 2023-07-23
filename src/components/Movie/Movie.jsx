@@ -1,7 +1,7 @@
 import { StyledMovie } from './Movie.styled';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link} from 'react-router-dom';
 import { useRef } from 'react';
-import { Rating } from 'components/Rating/Rating';
+import Rating  from 'components/Rating/Rating';
 import backdrop from '../../images/backdropPhoto.png';
 import PropTypes from 'prop-types';
 

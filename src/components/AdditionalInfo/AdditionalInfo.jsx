@@ -1,5 +1,7 @@
 import { StyledAdditionalInfo, StyledLink } from './AdditionalInfo.styled';
 import { Outlet } from 'react-router-dom';
+import { Suspense } from "react";
+import Loader from 'components/Loader/Loader';
 
 const AdditionalInfo = () => {
   return (
@@ -19,7 +21,9 @@ const AdditionalInfo = () => {
           <h2>Additional Information</h2>
         </li>
       </ul>
+      <Suspense fallback={<Loader/>}>
       <Outlet />
+      </Suspense>
     </StyledAdditionalInfo>
   );
 };
