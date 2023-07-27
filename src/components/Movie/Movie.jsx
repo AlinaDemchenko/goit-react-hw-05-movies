@@ -55,7 +55,7 @@ function Movie({ movieInfo }) {
           <Rating rating={movieInfo.vote_average} />
         )}
         <Link to={backLink.current ?? '/'} className="backLink">
-          <span>◀︎◀︎</span>GO BACK
+          <span>&#65308;&#65308;</span>GO BACK
         </Link>
       </div>
     </StyledMovie>

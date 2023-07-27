@@ -58,14 +58,16 @@ export const StyledMovie = styled.div`
     line-height: 1.2em;
   }
 
-  span {
+  a span {
     display: inline-block;
     margin-right: 10px;
+    letter-spacing: -0.3em;
   }
 
   div.star-ratings {
     margin-bottom: 35px;
     padding: 10px 0px !important;
+    font-weight: normal;
   }
 
   div.star-container {
